@@ -35,10 +35,11 @@
         .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
         .hero h2 { font-size: 3rem; margin-bottom: 1rem; animation: fadeInUp 0.8s ease-out; }
         .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; animation: fadeInUp 0.8s ease-out 0.2s backwards; }
-        .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; animation: fadeInUp 0.8s ease-out 0.4s backwards; }
+        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3rem; animation: fadeInUp 0.8s ease-out 0.4s backwards; max-width: 1000px; margin-left: auto; margin-right: auto; }
         .stat-item { text-align: center; }
         .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--accent-color); }
         .stat-label { font-size: 1rem; opacity: 0.9; }
+        .stat-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
 
         .product-showcase { padding: 80px 2rem; background: white; }
         .container { max-width: 1200px; margin: 0 auto; }
@@ -75,13 +76,6 @@
         .features-list li { padding: 0.8rem 0; border-bottom: 1px solid #F0F0F0; color: #555; }
         .features-list li:before { content: "✓ "; color: var(--success-color); font-weight: bold; margin-right: 0.5rem; }
 
-        .impact { padding: 80px 2rem; background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; text-align: center; }
-        .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; margin-top: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
-        .impact-item { text-align: center; }
-        .impact-icon { font-size: 3.5rem; margin-bottom: 1rem; }
-        .impact-number { font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem; }
-        .impact-label { font-size: 1.1rem; opacity: 0.9; }
-
         .contact-cta { padding: 80px 2rem; background: var(--bg-light); text-align: center; }
         .cta-content { max-width: 700px; margin: 0 auto; }
         .cta-content h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; }
@@ -104,9 +98,8 @@
         @media (max-width: 768px) {
             .nav-menu { display: none; }
             .hero h2 { font-size: 2rem; }
-            .hero-stats { flex-direction: column; gap: 1.5rem; }
+            .hero-stats { grid-template-columns: 1fr; gap: 1.5rem; }
             .features-horizontal { grid-template-columns: 1fr; }
-            .impact-grid { grid-template-columns: 1fr; gap: 2rem; }
             .how-step { flex-direction: column; text-align: center; }
         }
     </style>
@@ -130,7 +123,7 @@
                 <li role="none"><a role="menuitem" href="#produit">Notre Offre</a></li>
                 <li role="none"><a role="menuitem" href="#fonctionnement">Comment ça marche</a></li>
                 <li role="none"><a role="menuitem" href="#tarifs">Tarifs</a></li>
-                <li role="none"><a role="menuitem" href="#impact">Impact</a></li>
+                <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -142,9 +135,21 @@
             <p>Touchez vos clients là où ils se déplacent.</p>
             <a href="https://wa.me/p/25288248707436329/33635045500" class="cta-button" style="font-size: 1.2rem; padding: 1rem 3rem;">Lancer Ma Campagne</a>
             <div class="hero-stats" aria-hidden="false">
-                <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Taxis Équipés</div></div>
-                <div class="stat-item"><div class="stat-number">45+</div><div class="stat-label">Emplacements QR</div></div>
-                <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Clics Trackés</div></div>
+                <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">📱</div>
+                    <div class="stat-number">2500</div>
+                    <div class="stat-label">Scans de QR codes par mois</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">💰</div>
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">Moins cher que l'affichage traditionnel</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">🚖</div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Chauffeurs partenaires bénéficiant d'un revenu supplémentaire</div>
+                </div>
             </div>
         </div>
     </section>
@@ -213,18 +218,6 @@
         </div>
     </section>
 
-    <section class="impact" id="impact" aria-labelledby="impact-title">
-        <div class="container">
-            <h2 id="impact-title" class="section-title" style="color: white;">L'Impact Que Nous Créons</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Des résultats mesurables pour votre entreprise et notre communauté</p>
-            <div class="impact-grid">
-                <div class="impact-item"><div class="impact-icon" aria-hidden="true">📱</div><div class="impact-number">2500</div><div class="impact-label">Scans de QR codes par mois</div></div>
-                <div class="impact-item"><div class="impact-icon" aria-hidden="true">💰</div><div class="impact-number">70%</div><div class="impact-label">Moins cher que l'affichage traditionnel</div></div>
-                <div class="impact-item"><div class="impact-icon" aria-hidden="true">🚖</div><div class="impact-number">15+</div><div class="impact-label">Chauffeurs partenaires bénéficiant d'un revenu supplémentaire</div></div>
-            </div>
-        </div>
-    </section>
-
     <section class="contact-cta" id="contact">
         <div class="container">
             <div class="cta-content">
@@ -238,7 +231,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section"><h3>NYONDA Enterprises</h3><p>Publicité Extérieure Innovante et Responsable. Touchez vos clients là où ils se déplacent.</p></div>
-            <div class="footer-section"><h3>Notre Offre</h3><ul><li><a href="#produit">Publicité sur QR Codes</a></li><li><a href="#fonctionnement">Comment ça marche</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#impact">Impact Mesurable</a></li></ul></div>
+            <div class="footer-section"><h3>Notre Offre</h3><ul><li><a href="#produit">Publicité sur QR Codes</a></li><li><a href="#fonctionnement">Comment ça marche</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#contact">Contact</a></li></ul></div>
             <div class="footer-section"><h3>Zones Couvertes</h3><ul><li>✓ Libreville Centre</li><li>✓ Akanda</li><li>✓ Owendo</li></ul></div>
         </div>
         <div class="footer-bottom">
