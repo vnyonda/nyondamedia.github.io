@@ -35,11 +35,10 @@
         .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
         .hero h2 { font-size: 3rem; margin-bottom: 1rem; animation: fadeInUp 0.8s ease-out; }
         .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; animation: fadeInUp 0.8s ease-out 0.2s backwards; }
-        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3rem; animation: fadeInUp 0.8s ease-out 0.4s backwards; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; animation: fadeInUp 0.8s ease-out 0.4s backwards; }
         .stat-item { text-align: center; }
         .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--accent-color); }
         .stat-label { font-size: 1rem; opacity: 0.9; }
-        .stat-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
 
         .product-showcase { padding: 80px 2rem; background: white; }
         .container { max-width: 1200px; margin: 0 auto; }
@@ -98,7 +97,7 @@
         @media (max-width: 768px) {
             .nav-menu { display: none; }
             .hero h2 { font-size: 2rem; }
-            .hero-stats { grid-template-columns: 1fr; gap: 1.5rem; }
+            .hero-stats { flex-direction: column; gap: 1.5rem; }
             .features-horizontal { grid-template-columns: 1fr; }
             .how-step { flex-direction: column; text-align: center; }
         }
@@ -135,21 +134,9 @@
             <p>Touchez vos clients là où ils se déplacent.</p>
             <a href="https://wa.me/p/25288248707436329/33635045500" class="cta-button" style="font-size: 1.2rem; padding: 1rem 3rem;">Lancer Ma Campagne</a>
             <div class="hero-stats" aria-hidden="false">
-                <div class="stat-item">
-                    <div class="stat-icon" aria-hidden="true">📱</div>
-                    <div class="stat-number">2500</div>
-                    <div class="stat-label">Scans de QR codes par mois</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon" aria-hidden="true">💰</div>
-                    <div class="stat-number">70%</div>
-                    <div class="stat-label">Moins cher que l'affichage traditionnel</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon" aria-hidden="true">🚖</div>
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Chauffeurs partenaires bénéficiant d'un revenu supplémentaire</div>
-                </div>
+                <div class="stat-item"><div class="stat-number">45+</div><div class="stat-label">Emplacements QR</div></div>
+                <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Clics Trackés</div></div>
+                <div class="stat-item"><div class="stat-number">70%</div><div class="stat-label">Moins cher que l'affichage traditionnel</div></div>
             </div>
         </div>
     </section>
@@ -189,19 +176,6 @@
         </div>
     </section>
 
-    <section class="how-it-works" id="fonctionnement" aria-labelledby="how-title">
-        <div class="container">
-            <h2 id="how-title" class="section-title">Comment Ça Marche ?</h2>
-            <p class="section-subtitle">Un processus simple en 4 étapes pour lancer votre campagne</p>
-            <div class="how-it-works-content">
-                <div class="how-step"><div class="step-number">1</div><div class="step-content"><h3>Consultation & Sélection</h3><p>Contactez-nous pour discuter de vos objectifs. Nous définissons ensemble le nombre de taxis et la durée de votre campagne selon votre budget.</p></div></div>
-                <div class="how-step"><div class="step-number">2</div><div class="step-content"><h3>Création de Votre Annonce</h3><p>Envoyez-nous votre visuel ou nous le créons pour vous. Optimisation pour affichage mobile sur la page de destination du QR code.</p></div></div>
-                <div class="how-step"><div class="step-number">3</div><div class="step-content"><h3>Activation Immédiate</h3><p>Votre annonce est activée sur les QR codes des taxis sélectionnés. Les passagers scannent et voient votre pub instantanément.</p></div></div>
-                <div class="how-step"><div class="step-number">4</div><div class="step-content"><h3>Suivi & Résultats</h3><p>Recevez des rapports mensuels détaillés : nombre de scans, clics sur votre annonce, zones de circulation, taux d'engagement.</p></div></div>
-            </div>
-        </div>
-    </section>
-
     <section class="pricing" id="tarifs" aria-labelledby="pricing-title">
         <div class="container">
             <h2 id="pricing-title" class="section-title">Tarifs Transparents</h2>
@@ -214,6 +188,19 @@
             <div style="text-align: center; margin-top: 3rem; color: #7F8C8D;">
                 <p><strong>🎁 Offre de lancement :</strong> -20% sur votre première campagne + création visuelle offerte</p>
                 <p style="margin-top: 1rem;">Tous nos tarifs incluent : TVA, espace sur QR codes, tracking, reporting mensuel.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="fonctionnement" aria-labelledby="how-title">
+        <div class="container">
+            <h2 id="how-title" class="section-title">Comment Ça Marche ?</h2>
+            <p class="section-subtitle">Un processus simple en 4 étapes pour lancer votre campagne</p>
+            <div class="how-it-works-content">
+                <div class="how-step"><div class="step-number">1</div><div class="step-content"><h3>Consultation & Sélection</h3><p>Contactez-nous pour discuter de vos objectifs. Nous définissons ensemble le nombre de taxis et la durée de votre campagne selon votre budget.</p></div></div>
+                <div class="how-step"><div class="step-number">2</div><div class="step-content"><h3>Création de Votre Annonce</h3><p>Envoyez-nous votre visuel ou nous le créons pour vous. Optimisation pour affichage mobile sur la page de destination du QR code.</p></div></div>
+                <div class="how-step"><div class="step-number">3</div><div class="step-content"><h3>Activation Immédiate</h3><p>Votre annonce est activée sur les QR codes des taxis sélectionnés. Les passagers scannent et voient votre pub instantanément.</p></div></div>
+                <div class="how-step"><div class="step-number">4</div><div class="step-content"><h3>Suivi & Résultats</h3><p>Recevez des rapports mensuels détaillés : nombre de scans, clics sur votre annonce, zones de circulation, taux d'engagement.</p></div></div>
             </div>
         </div>
     </section>
